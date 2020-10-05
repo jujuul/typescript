@@ -1,9 +1,25 @@
 /*
  * @Author: your name
  * @Date: 2020-10-03 15:18:23
- * @LastEditTime: 2020-10-03 15:18:43
- * @LastEditors: your name
+ * @LastEditTime: 2020-10-03 16:02:24
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \typescript\demo6.ts
  */
-const numberArr = [1,2,3]
+const numberArr: number[] = [1, 2, 3];
+const stringArr: string[] = ["a", "b", "c"];
+const undefinedArr: undefined[] = [undefined, undefined, undefined];
+const arr: (number | string)[] = [1, "string", 2];
+
+// type alias 类型别名
+
+type Lady = { name: string; age: number };
+
+class Madam {
+  name: string;
+  age: number;
+}
+const xiaojiejies: Madam[] = [
+  { name: "刘英", age: 18 },
+  { name: "谢大脚", age: 28 },
+];
