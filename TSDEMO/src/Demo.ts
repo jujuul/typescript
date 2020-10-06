@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-05 13:00:56
- * @LastEditTime: 2020-10-05 20:55:42
+ * @LastEditTime: 2020-10-06 11:04:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \typescript\TSDEMO\src\Demo.ts
@@ -80,11 +80,11 @@
 
 // 泛型
 // 函数中的泛型
-function join<T, P>(first: T, second: P) {
-  return `${first}${second}`;
-}
-// join<string>("jujuul", ".com");
-join<string, number>("1", 2);
+// function join<T, P>(first: T, second: P) {
+//   return `${first}${second}`;
+// }
+// // join<string>("jujuul", ".com");
+// join<string, number>("1", 2);
 
 // // 泛型中数组的使用
 // function myFun<T>(params: Array<T>) {
@@ -93,14 +93,11 @@ join<string, number>("1", 2);
 
 // myFun<string>(["123", "456"]);
 // 类中的泛型
-// interface Girl {
-//   name: string;
-// }
-// class SelectGirl<T extends number | string> {
-//   constructor(private girls: T[]) {}
-//   getGirl(index: number): T {
-//     return this.girls[index];
-//   }
-// }
-// const selectGirl = new SelectGirl<string>(["大脚", "刘英", "小红"]);
-// console.log(selectGirl.getGirl(1));
+class SelectGirl<T extends number | string> {
+  constructor(private girls: T[]) {}
+  getGirl(index: number): T {
+    return this.girls[index];
+  }
+}
+const selectGirl = new SelectGirl(["大脚", "刘英", "小红"]);
+console.log(selectGirl.getGirl(1));
